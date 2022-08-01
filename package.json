@@ -6,6 +6,7 @@
   "dependencies": {
     "@opengsn/contracts": "^3.0.0-beta.1",
     "@opengsn/dev": "^3.0.0-beta.1",
+    "@opengsn/paymasters": "^3.0.0-beta.1",
     "@opengsn/provider": "^3.0.0-beta.1",
     "browserify": "^17.0.0",
     "ethers": "^5.6.8",
@@ -14,8 +15,8 @@
     "serve": "^13.0.0"
   },
   "scripts": {
-    "ganache": "yarn run ganache-cli -d --networkId 1337 --chainId 1337",
-    "gsn-with-ganache": "run-with-testrpc -d --networkId 1337 --chainId 1337 'gsn start'",
+    "ganache": "yarn run ganache-cli -d --chainId 1337",
+    "gsn-with-ganache": "run-with-testrpc -d --chainId 1337 'gsn start'",
     "test": "truffle test",
     "compile": "truffle compile",
     "build": "./ui/build.sh",
