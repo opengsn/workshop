@@ -1,0 +1,23 @@
+{
+  "name": "gsn-sample-workshop",
+  "version": "3.0.0",
+  "description": "Simple example of how to use GSNv3",
+  "private": true,
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "ethers": "^5.6.8",
+    "ganache-cli": "^6.12.2",
+    "run-with-testrpc": "^0.3.1",
+    "serve": "^13.0.0"
+  },
+  "scripts": {
+    "ganache": "yarn run ganache-cli -d --chainId 1337",
+    "gsn-with-ganache": "run-with-testrpc -d --chainId 1337 'gsn start'",
+    "test": "truffle test",
+    "compile": "truffle compile",
+    "build": "./ui/build.sh",
+    "start": "truffle deploy && yarn build && yarn serve ./build/html"
+  },
+  "author": "Dror Tirosh",
+  "license": "GPL"
+}
