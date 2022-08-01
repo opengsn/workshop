@@ -1,24 +1,23 @@
 # GSN v3 integration workshop
 
-### (Base branch - before adding any GSN support)
+### (This branch already contains frontend and contract integration with GSN)
 
 This sample dapp emits an event with the last account that clicked on the "capture the flag" button. We will integrate
 this dapp to work gaslessly with GSN v3. This will allow an externally owned account without ETH to capture the flag by
 signing a meta transaction.
 
-
 ### To run the sample:
 
 1. first clone and `yarn install`
-2. run `yarn ganache`
+2. run `yarn gsn-with-ganache` to start a node, and also deploy GSN contracts and start a relayer service.
 3. Make sure you have Metamask installed, and pointing to "localhost"
 4. In a different window, run `yarn start`, to deploy the contract, and start the UI
 5. Start a browser pointing to "http://localhost:3000"
-6. Click the "Capture the Flag" button. Notice that you do need an account with eth for that..
+6. Click the "Capture the Flag" button. Notice that you don't need eth in your account: You only sign the transaction.
 
 You can see the integrations as GitHub pull requests:
 
-1. [Basic: Minimum viable GSN integration](https://github.com/opengsn/workshop/pull/1/files)
+1. (this branch) [Basic: Minimum viable GSN integration](https://github.com/opengsn/workshop/pull/1/files)
 2. [Advanced: Write your own custom Paymaster](https://github.com/opengsn/workshop/pull/2/files_)
 
 Note: on testnet we maintain a public service "pay for everything" paymaster so writing your own is not strictly
