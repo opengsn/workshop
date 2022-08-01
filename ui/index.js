@@ -1,7 +1,8 @@
 const ethers = require('ethers')
 const {RelayProvider} = require('@opengsn/provider')
+let whitelistPaymasterAddress
 
-const paymasterAddress = require('../build/gsn/Paymaster').address
+const WhitelistPaymasterArtifact = require('../build/contracts/WhitelistPaymaster.json')
 const contractArtifact = require('../build/contracts/CaptureTheFlag.json')
 const contractAbi = contractArtifact.abi
 
@@ -24,11 +25,14 @@ async function initContract() {
     })
     const networkId = await window.ethereum.request({method: 'net_version'})
 
+    whitelistPaymasterAddress = WhitelistPaymasterArtifact.networks[networkId].address
+    console.log('Using whitelistPaymaster at', whitelistPaymasterAddress)
+
     gsnProvider = await RelayProvider.newProvider({
         provider: window.ethereum,
         config: {
-            loggerConfiguration: {logLevel: 'debug'},
-            paymasterAddress
+            //loggerConfiguration: { logLevel: 'error' },
+            paymasterAddress: whitelistPaymasterAddress
         }
     }).init()
 
