@@ -11,7 +11,8 @@ signing a meta transaction.
 
 1. first clone and `yarn install`
 2. run `yarn ganache`
-3. Make sure you have Metamask installed, and pointing to "localhost"
+3. Make sure you have Metamask installed, and pointing to "localhost
+4. run `truffle init` and set the network in `truffle-config.js`
 4. In a different window, run `yarn start`, to deploy the contract, and start the UI
 5. Start a browser pointing to "http://localhost:3000"
 6. Click the "Capture the Flag" button. Notice that you do need an account with eth for that..
