@@ -15,7 +15,7 @@ contract CaptureTheFlag is ERC2771Recipient {
         _setTrustedForwarder(forwarder);
     }
 
-    string public override versionRecipient = "3.0.0";
+    string public versionRecipient = "3.0.0";
 
     function captureTheFlag() external {
         address previousHolder = currentHolder;
