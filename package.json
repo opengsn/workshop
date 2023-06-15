@@ -11,7 +11,7 @@
     "serve": "^13.0.0"
   },
   "scripts": {
-    "ganache": "yarn run ganache-cli -d --chainId 1337",
+    "ganache": "ganache",
     "gsn-with-ganache": "run-with-testrpc -d --chainId 1337 'gsn start'",
     "test": "truffle test",
     "compile": "truffle compile",
